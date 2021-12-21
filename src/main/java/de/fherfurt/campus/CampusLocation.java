@@ -1,6 +1,9 @@
 package de.fherfurt.campus;
 
 public class CampusLocation {
+    private double latCoord;
+    private double longCoord;
+
     public double getLatCoord() {
         return latCoord;
     }
@@ -16,9 +19,6 @@ public class CampusLocation {
     public void setLongCoord(double longCoord) {
         this.longCoord = longCoord;
     }
-
-    double latCoord;
-    double longCoord;
 
     public CampusLocation(double latCoord, double longCoord) {
         this.latCoord = latCoord;
