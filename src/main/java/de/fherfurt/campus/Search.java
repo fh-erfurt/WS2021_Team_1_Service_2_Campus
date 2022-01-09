@@ -1,7 +1,9 @@
 package de.fherfurt.campus;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 public class Search {
 
     private final Map<String, CampusLocation> locations = new HashMap<>(){{
@@ -16,7 +18,7 @@ public class Search {
     public CampusLocation findByStreet(Campus street) {
         switch (street.getStreet()) {
             case "Altonaer Straße":
-                return locations.get("Campus Altonaer Straße");
+                return locations.get("Altonaer Straße");
             case "Steinplatz 2":
                 return locations.get("Steinplatz 2");
             case "Leipziger Straße 77":
