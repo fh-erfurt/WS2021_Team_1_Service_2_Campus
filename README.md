@@ -11,4 +11,4 @@
 - Packages nutzen
 - Doku anlegen
 - Reports hinzufügen
-- Code kommentieren 
+- Code kommentieren/Credit zu der jeweiligen Person
