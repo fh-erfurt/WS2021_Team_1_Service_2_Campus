@@ -7,7 +7,7 @@
 - Philipp Weißleder
 
 
-##Zu beachten
+## Zu beachten
 - Packages nutzen
 - Doku anlegen
 - Repots hinzufügen
