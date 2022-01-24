@@ -10,4 +10,4 @@
 ## Zu beachten
 - Packages nutzen
 - Doku anlegen
-- Repots hinzufügen
+- Reports hinzufügen
