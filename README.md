@@ -11,3 +11,4 @@
 - Packages nutzen
 - Doku anlegen
 - Reports hinzufügen
+- Code kommentieren 
