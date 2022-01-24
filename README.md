@@ -5,3 +5,9 @@
 - Peer Ebersoll
 - Justus Hose
 - Philipp Weißleder
+
+
+##Zu beachten
+- Packages nutzen
+- Doku anlegen
+- Repots hinzufügen
