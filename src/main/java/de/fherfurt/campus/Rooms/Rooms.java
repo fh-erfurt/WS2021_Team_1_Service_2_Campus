@@ -3,10 +3,9 @@
 
     public class rooms {
 
-        public String building;
-        public String floor;
-        public String roomNumber;
-        public String roomName;
+        public int building;
+        public int floor;
+        public int roomNumber;
 
         public String[][][] roomAddress = new String[building][floor][roomNumber];
 
