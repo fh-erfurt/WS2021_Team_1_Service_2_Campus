@@ -1,39 +1,13 @@
-package de.fherfurt.campus;
+    package de.fherfurt.campus;
 
-public class rooms {
 
-    public string getBuilding{
-        return building;
+    public class rooms {
+
+        public String building;
+        public String floor;
+        public String roomNumber;
+        public String roomName;
+
+        public String[][][] roomAddress = new String[building][floor][roomNumber];
+
     }
-
-    public void setBuilding(string building){
-        this.building = building;
-    }
-
-
-    public string getFloor{
-        return floor;
-    }
-
-    public void setFloor(string floor){
-        this.floor = floor;
-    }
-
-
-    public string getRoomNumber{
-        return roomNumber;
-    }
-
-    public void setRoomNumber(string roomNumber){
-        this.roomNumber = roomNumber;
-    }
-
-
-    public string getRoomType{
-        return roomType;
-    }
-
-    public void setRoomType(string roomType){
-        this.roomType = roomType;
-    }
-}
