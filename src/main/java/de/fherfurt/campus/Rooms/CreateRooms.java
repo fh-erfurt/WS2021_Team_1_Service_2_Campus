@@ -25,4 +25,8 @@ public class createRoom{
   public void setRoomNumber(int roomNumber){
     this.roomNumber = roomNumber;
   }
+  
+  private int building;
+  private int floor;
+  private int roomNumber;
 }
