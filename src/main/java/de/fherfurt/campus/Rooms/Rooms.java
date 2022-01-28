@@ -1,7 +1,7 @@
     package de.fherfurt.campus;
 
 
-    public class rooms {
+    public class Rooms {
         
         //Basic values to generate the address
         public int building;
