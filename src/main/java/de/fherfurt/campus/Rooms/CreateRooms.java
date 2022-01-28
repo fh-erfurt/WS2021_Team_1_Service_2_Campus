@@ -1,6 +1,6 @@
 package de.fherfurt.campus;
 
-public class createRoom{
+public void createRoom{
   
   public int getBuilding(){
     return building;
