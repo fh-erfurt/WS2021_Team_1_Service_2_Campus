@@ -1,3 +1,4 @@
+package de.fherfurt.campus.building;
 
 public class Building {
     public String streetOrientation;

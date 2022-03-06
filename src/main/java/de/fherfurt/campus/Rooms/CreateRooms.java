@@ -1,10 +1,10 @@
-package de.fherfurt.campus;
+package de.fherfurt.campus.Rooms;
 
-public void createRoom{
+public class CreateRooms {
   
-  public int getBuilding(){
-    return building;
-  }
+    public int getBuilding(){
+      return building;
+    }
   
   public void setBuilding(int building){
     this.building = building;
