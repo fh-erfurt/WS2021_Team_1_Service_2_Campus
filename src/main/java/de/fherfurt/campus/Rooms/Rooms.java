@@ -14,15 +14,15 @@
         //Enum with different types of rooms, May need expansion
         //Needs refinement
         public enum roomType {
-            Men("Mensa"),
-            Bib("Bibliothek"),
-            Vor("Vorlesungsaal"),
-            Pru("Pruefungsraum"),
-            Sem("Seminarraum"),
-            Sek("Sekreteriat"),
-            Com("Computerpool"),
-            Toi("Toilette"),
-            HuG("Haus- und Gebaeudetechnick")
+            Men,
+            Bib,
+            Vor,
+            Pru,
+            Sem,
+            Sek,
+            Com,
+            Toi,
+            HuG
         }
 
     }
