@@ -1,4 +1,4 @@
-package de.fherfurt.campus.Rooms;
+package de.fherfurt.campus.rooms;
 
 public class CreateRooms {
   

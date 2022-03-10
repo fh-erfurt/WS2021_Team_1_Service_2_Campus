@@ -38,6 +38,9 @@ class BuildingTest {
 
     @Test
     void shouldReturnRectangle() {
-
+        Building newBuilding = new Building();
+        Point newPoint = new Point();
+        newPoint.setX(5);
+        newPoint.setY(3);
     }
 }
