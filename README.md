@@ -12,3 +12,7 @@
 - Doku anlegen
 - Reports hinzufügen
 - Code kommentieren/Credit zu der jeweiligen Person
+
+
+Code Dokumentation
+https://docs.google.com/document/d/1ALZKoAgOdqV02LrDwhPPHTKzHeO8hQZtziR7c4y9zDc/edit?usp=sharing
