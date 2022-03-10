@@ -1,4 +1,4 @@
-    package de.fherfurt.campus;
+    package de.fherfurt.campus.rooms;
 
 
     public class Rooms {
