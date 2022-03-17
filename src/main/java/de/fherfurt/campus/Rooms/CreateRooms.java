@@ -1,4 +1,4 @@
-package de.fherfurt.campus.rooms;
+package de.fherfurt.campus.Rooms;
 
 public class CreateRooms {
   
@@ -25,7 +25,9 @@ public class CreateRooms {
   public void setRoomNumber(int roomNumber){
     this.roomNumber = roomNumber;
   }
-  
+
+
+
   private int building;
   private int floor;
   private int roomNumber;
