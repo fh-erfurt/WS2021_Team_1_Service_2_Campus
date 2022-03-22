@@ -1,5 +1,9 @@
 package de.fherfurt.campus.building;
 
+/*
+* has all information to draw a squar for a building with triangles for doors and points for rooms
+*/
+
 public class Building {
     public String streetOrientation;
     public int buildingNumber;
