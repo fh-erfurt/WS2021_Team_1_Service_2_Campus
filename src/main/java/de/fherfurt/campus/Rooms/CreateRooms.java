@@ -1,8 +1,17 @@
 package de.fherfurt.campus.rooms;
 
+
+/*
+* CreateRooms creates room with building, floor and roomNumber as variables
+*/
+
 public class CreateRooms {
   
-    public int getBuilding(){
+  private int building;
+  private int floor;
+  private int roomNumber;
+
+  public int getBuilding(){
       return building;
     }
   
@@ -26,7 +35,4 @@ public class CreateRooms {
     this.roomNumber = roomNumber;
   }
   
-  private int building;
-  private int floor;
-  private int roomNumber;
 }
