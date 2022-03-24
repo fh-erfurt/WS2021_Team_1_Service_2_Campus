@@ -10,7 +10,7 @@
         //Creates an address for a room based on int values in which the room type will later be saved
         public String[][][] roomAddress = new String[building][floor][roomNumber];
 
-
+        //specifying the name/purpose of the room
         public String roomType;
         public String getRoomType() {
             return roomType;
@@ -21,8 +21,7 @@
         }
 
         //Enum with different types of rooms, May need expansion
-        //Needs refinement
-        //Cannot really be used without console inputs
+        //Cannot really be used without console inputs as it is there to validate the inputs integrity
         public enum roomTypeCheck {
             men("Mensa"),
             bib("Bibliothek"),
