@@ -1,5 +1,8 @@
 package de.fherfurt.campus;
-
+/**
+ *
+ * @author Andreas Lemke & Justus Hose
+ */
 public class Address {
     private String street;
 

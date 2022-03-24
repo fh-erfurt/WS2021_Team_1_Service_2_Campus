@@ -1,5 +1,8 @@
 package de.fherfurt.campus;
-
+/**
+ *
+ * @author Andreas Lemke & Justus Hose
+ */
 public class CampusLocation {
     private double latCoord;
     private double longCoord;

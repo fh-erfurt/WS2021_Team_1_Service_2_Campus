@@ -1,5 +1,9 @@
 package de.fherfurt.campus.building;
 
+/*
+* points with variables for x and y position
+*/
+
 public class Point {
     int x;
     int y;

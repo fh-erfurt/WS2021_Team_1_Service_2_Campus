@@ -1,5 +1,8 @@
 package de.fherfurt.campus;
-
+/**
+ *
+ * @author Andreas Lemke & Justus Hose
+ */
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
