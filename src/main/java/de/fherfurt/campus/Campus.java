@@ -1,7 +1,10 @@
 package de.fherfurt.campus;
 
 import java.util.Date;
-
+/**
+ *
+ * @author Andreas Lemke & Justus Hose
+ */
 public class Campus {
     public String getStreet() {
         return street;
