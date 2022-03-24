@@ -34,16 +34,16 @@ public class CreateRooms {
   /*
   This Comment is to show how the enum of the package Rooms was intended to be used.
 
-  Scanner roomTypeInput = new Scanner(System.in);
+  Scanner roomTypeInput = new Scanner(System.in); //scanner for the type of room to be created
 
-  if (roomTypeCheck.valueOf(roomTypeInput))
+  if (roomTypeCheck.valueOf(roomTypeInput))   //check if the entered value is part of the predetermined types of rooms
   {
-  roomType = roomTypeInput;
-  System.out.println("Success!");
+  roomType = roomTypeInput;                   //if yes accept the value
+  System.out.println("Success!");             //give feedback to the one trying to create a room
   }
   else
   {
-  System.out.println("Error! Invalid room type.")
+  System.out.println("Error! Invalid room type.")   //give feedback that the creation failed due to a not recognized type of room
   }
    */
 }
