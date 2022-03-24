@@ -22,16 +22,23 @@
 
         //Enum with different types of rooms, May need expansion
         //Needs refinement
+        //Cannot really be used without console inputs
         public enum roomTypeCheck {
-            Mensa,
-            Bibliothek,
-            Vorlesungsraum,
-            Pruefungsraum,
-            Seminarraum,
-            Sekretariat,
-            Computerpool,
-            Toilette,
-            Haustechnick
+            men("Mensa"),
+            bib("Bibliothek"),
+            vor("Vorlesungsraum"),
+            pru("Pruefungsraum"),
+            sem("Seminarraum"),
+            sek("Sekretariat"),
+            com("Computerpool"),
+            toi("Toilette"),
+            hau("Haustechnick");
+
+            public final String Checker;
+
+            private roomTypeCheck(String Checker){
+                this.Checker = Checker;
+            }
         }
 
     }
