@@ -1,38 +1,50 @@
-package de.fherfurt.campus.rooms;
-
-
-/*
-* CreateRooms creates room with building, floor and roomNumber as variables
-*/
-
+package de.fherfurt.campus.Rooms;
+//Code von Peer Kristian Ebersoll
 public class CreateRooms {
-  
+
+  public int getBuilding() {
+    return building;
+  }
+
+  public void setBuilding(int building) {
+    this.building = building;
+  }
+
+  public int getFloor() {
+    return floor;
+  }
+
+  public void setFloor(int floor) {
+    this.floor = floor;
+  }
+
+  public int getRoomNumber() {
+    return roomNumber;
+  }
+
+  public void setRoomNumber(int roomNumber) {
+    this.roomNumber = roomNumber;
+  }
+
+
   private int building;
   private int floor;
   private int roomNumber;
 
-  public int getBuilding(){
-      return building;
-    }
-  
-  public void setBuilding(int building){
-    this.building = building;
-  }
+  /*
+  This Comment is to show how the enum of the package Rooms was intended to be used.
 
-  public int getFloor(){
-    return floor;
+  Scanner roomTypeInput = new Scanner(System.in); //scanner for the type of room to be created
+
+  if (roomTypeCheck.valueOf(roomTypeInput))   //check if the entered value is part of the predetermined types of rooms
+  {
+  roomType = roomTypeInput;                   //if yes accept the value
+  System.out.println("Success!");             //give feedback to the one trying to create a room
   }
-  
-  public void setFloor(int floor){
-    this.floor = floor;
+  else
+  {
+  System.out.println("Error! Invalid room type.")   //give feedback that the creation failed due to a not recognized type of room
   }
-  
-  public int getRoomNumber(){
-    return roomNumber;
-  }
-  
-  public void setRoomNumber(int roomNumber){
-    this.roomNumber = roomNumber;
-  }
-  
+   */
 }
+
