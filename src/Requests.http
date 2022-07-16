@@ -1,0 +1,27 @@
+
+
+### Get Greeting from Server
+GET http://localhost:8080/api/
+Accept: text/plain
+
+### Get all Userprofiles
+GET http://localhost:8080/api/users
+Accept: application/json
+
+### Get User with ID 2
+GET http://localhost:8080/api/users/2
+Accept: application/json
+
+### Delete User with ID 5
+DELETE http://localhost:8080/api/users/5
+Accept: application/json
+
+### Create User
+POST http://localhost:8080/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "fullName": "Hans Peter",
+  "userName": "Baxxter"
+}
