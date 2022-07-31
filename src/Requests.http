@@ -25,3 +25,25 @@ Accept: application/json
   "fullName": "Hans Peter",
   "userName": "Baxxter"
 }
+
+### Get all posts
+GET http://localhost:8080/api/posts
+Accept: application/json
+
+### Get Post with ID 2
+GET http://localhost:8080/api/posts/2
+Accept: application/json
+
+### Delete Post with ID 5
+DELETE http://localhost:8080/api/posts/5
+Accept: application/json
+
+### Create post
+POST http://localhost:8080/api/post
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": "Hans Peter",
+  "text": "Hyper Hyper"
+}

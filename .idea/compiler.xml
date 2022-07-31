@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="campus" />
         <module name="WS2021_Team_1_Service_2_Campus" />
+        <module name="java-addressbook-jpa" />
       </profile>
     </annotationProcessing>
   </component>

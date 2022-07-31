@@ -8,8 +8,18 @@ public class Comment extends BaseStorage
     int likes;
     int dislikes;
     Date creationDate;
-    String creator;
-    String commentedOn;
+    User creator;
+    Post commentedOn;
+
+    public Comment(String body, int likes, int dislikes, User creator, Post commentedOn){
+        this.body = body;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.creator = creator;
+        this.commentedOn = commentedOn;
+    }
+
+    public Comment(){};
 
     public String getBody()
     {
@@ -55,23 +65,23 @@ public class Comment extends BaseStorage
     }
 
 
-    public String getCreator()
+    public User getCreator()
     {
         return creator;
     }
 
-    public void setCreator(String creator)
+    public void setCreator(User creator)
     {
         this.creator = creator;
     }
 
 
-    public String getCommentedOn()
+    public Post getCommentedOn()
     {
         return commentedOn;
     }
 
-    public void setCommentedOn(String commentedOn)
+    public void setCommentedOn(Post commentedOn)
     {
         this.commentedOn = commentedOn;
     }

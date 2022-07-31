@@ -15,6 +15,16 @@ public class User extends BaseStorage
     public List<Comment> comments = new ArrayList<Comment>();
     public List<Category> categories  = new ArrayList<Category>();
 
+    public User(String fullName, String userName, List<Post> posts, List<Comment> comments, List<Category> categories){
+        this.fullName = fullName;
+        this.userName = userName;
+        this.posts = posts;
+        this.comments = comments;
+        this.categories = categories;
+    };
+
+    public User(){};
+
     public String getFullName()
     {
         return fullName;

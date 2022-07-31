@@ -11,6 +11,14 @@ public class Category extends BaseStorage
     public int followers;
     List<Post> posts = new ArrayList<Post>();
 
+    public Category(String title, String description, int followers){
+        this.title = title;
+        this.description = description;
+        this.followers = followers;
+    }
+
+    public Category(){};
+
     public String getTitle()
     {
         return title;

@@ -22,6 +22,18 @@ public class Post extends BaseStorage
 
     public List<Comment> comments = new ArrayList<Comment>();
 
+    public Post(String title, String body, String link, int likes, int dislikes, int shares, User poster, Category category){
+        this.title = title;
+        this.body = body;
+        this.link = link;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.shares = shares;
+        this.poster = poster;
+        this.category = category;
+    }
+
+    public Post(){};
 
     public String getTitle()
     {
