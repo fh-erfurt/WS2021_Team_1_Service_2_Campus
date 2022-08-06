@@ -12,7 +12,7 @@ public class BaseResource
     @Produces(MediaType.TEXT_PLAIN)
     public String info()
     {
-        return "Info";
+        return "Hello from Base Resource";
     }
 
     @Path("/users")
@@ -26,4 +26,5 @@ public class BaseResource
     {
         return new PostsResource();
     }
+
 }

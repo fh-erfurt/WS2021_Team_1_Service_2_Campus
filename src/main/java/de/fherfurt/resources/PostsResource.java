@@ -23,6 +23,12 @@ public class PostsResource {
         this.postsRepository = RepositoryFactory.getInstance().getPostRepository();
     }
 
+    @Path("{postId:\\d+}/comment")
+    public CommentsResource getCommentResource()
+    {
+        return new CommentsResource();
+    }
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Post> getPosts(
@@ -34,11 +40,11 @@ public class PostsResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createPost(User postToCreateForUser){
-        boolean success = this.postsRepository.createPost(postToCreateForUser);
+    public Response createPost(Post postToCreate){
+        boolean success = this.postsRepository.createPost(postToCreate);
 
         if(success)
-            return Response.ok(postToCreateForUser).build();
+            return Response.ok(postToCreate).build();
         else
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
     }

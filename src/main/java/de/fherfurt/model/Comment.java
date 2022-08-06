@@ -1,36 +1,35 @@
 package de.fherfurt.model;
 
-import de.fherfurt.dataStorage.BaseStorage;
+import de.fherfurt.core.entity.AbstractDatabaseEntity;
+
 
 import java.util.Date;
 
-public class Comment extends BaseStorage
+public class Comment extends AbstractDatabaseEntity
 {
-    String body;
+    String text;
     int likes;
-    int dislikes;
     Date creationDate;
-    String creator;
-    String commentedOn;
+    User user;
+    Post post;
 
-    public Comment(String body, int likes, int dislikes, User creator, Post commentedOn){
-        this.body = body;
+    public Comment(String text, int likes, User creator, Post post){
+        this.text = text;
         this.likes = likes;
-        this.dislikes = dislikes;
-        this.creator = String.valueOf(creator);
-        this.commentedOn = String.valueOf(commentedOn);
+        this.user = creator;
+        this.post = post;
     }
 
     public Comment(){};
 
-    public String getBody()
+    public String getText()
     {
-        return body;
+        return text;
     }
 
-    public void setBody(String body)
+    public void setText(String text)
     {
-        this.body = body;
+        this.text = text;
     }
 
 
@@ -45,17 +44,6 @@ public class Comment extends BaseStorage
     }
 
 
-    public int getDislikes()
-    {
-        return dislikes;
-    }
-
-    public void setDislikes(int dislikes)
-    {
-        this.dislikes = dislikes;
-    }
-
-
     public Date getCreationDate()
     {
         return creationDate;
@@ -67,25 +55,25 @@ public class Comment extends BaseStorage
     }
 
 
-    public String getCreator()
+    public User getUser()
     {
-        return creator;
+        return user;
     }
 
-    public void setCreator(String creator)
+    public void setUser(User user)
     {
-        this.creator = creator;
+        this.user = user;
     }
 
 
-    public String getCommentedOn()
+    public Post getPost()
     {
-        return commentedOn;
+        return post;
     }
 
-    public void setCommentedOn(String commentedOn)
+    public void setPost(Post post)
     {
-        this.commentedOn = commentedOn;
+        this.post = post;
     }
 
 }

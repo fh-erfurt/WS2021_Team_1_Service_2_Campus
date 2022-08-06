@@ -10,7 +10,7 @@ import java.net.URI;
 
 public class WebApplication {
 
-    public static final String BASE_URI = "http://localhost:8080";
+    public static final String BASE_URI = "http://localhost:8080/";
 
     public static Server startServer()
     {

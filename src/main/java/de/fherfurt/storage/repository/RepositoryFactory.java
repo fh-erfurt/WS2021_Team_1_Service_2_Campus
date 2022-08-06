@@ -1,5 +1,6 @@
 package de.fherfurt.storage.repository;
 
+import de.fherfurt.model.Comment;
 import de.fherfurt.model.User;
 import de.fherfurt.util.DataProvide;
 
@@ -34,7 +35,7 @@ public class RepositoryFactory {
         this.entityManagerFactory = prepareEntityManagerFactory();
 
         LOGGER.info("Create RepositoryImpl");
-        this.repository = new RepositoryImpl();
+        this.repository = new RepositoryImpl(this.getUserDao(), this.getPostDao(), this.getCommentDao());
 
         LOGGER.info("Create Test Data");
         DataProvide.createTestData().forEach(this.repository::createUser);
@@ -62,5 +63,23 @@ public class RepositoryFactory {
     public PostRepository getPostRepository()
     {
         return this.repository;
+    }
+
+    public CommentRepository getCommentRepository()
+    {
+        return this.repository;
+    }
+
+    private UserDao getUserDao()
+    {
+        return new JpaUserDao(this.entityManagerFactory.createEntityManager());
+    }
+    private PostDao getPostDao()
+    {
+        return new JpaPostDao(this.entityManagerFactory.createEntityManager());
+    }
+    private GenericDao<Comment> getCommentDao()
+    {
+        return  new JpaGenericDao<>(Comment.class, this.entityManagerFactory.createEntityManager());
     }
 }

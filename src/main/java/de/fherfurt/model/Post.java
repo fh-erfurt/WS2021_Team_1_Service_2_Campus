@@ -1,148 +1,75 @@
 package de.fherfurt.model;
 
 
-import de.fherfurt.dataStorage.BaseStorage;
+import de.fherfurt.core.entity.AbstractDatabaseEntity;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Post extends BaseStorage
+public class Post extends AbstractDatabaseEntity
 {
     public String title;
-    public String body;
-    public String link;
-
+    public String text;
     public int likes;
-    public int dislikes;
-    public int shares;
-
     public Date postedOn;
-
     public User poster;
-    public Category category;
-
     public List<Comment> comments = new ArrayList<Comment>();
 
-    public Post(String title, String body, String link, int likes, int dislikes, int shares, User poster, Category category){
+    public Post(String title, String text, int likes, User poster){
         this.title = title;
-        this.body = body;
-        this.link = link;
+        this.text = text;
         this.likes = likes;
-        this.dislikes = dislikes;
-        this.shares = shares;
         this.poster = poster;
-        this.category = category;
     }
 
     public Post(){};
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title)
-    {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-
-    public String getBody()
-    {
-        return body;
+    public String getText() {
+        return text;
     }
 
-    public void setBody(String body)
-    {
-        this.body = body;
+    public void setText(String text) {
+        this.text = text;
     }
 
-
-    public String getLink()
-    {
-        return link;
-    }
-
-    public void setLink(String link)
-    {
-        this.link = link;
-    }
-
-
-    public int getLikes()
-    {
+    public int getLikes() {
         return likes;
     }
 
-    public void setLikes(int likes)
-    {
+    public void setLikes(int likes) {
         this.likes = likes;
     }
 
-
-    public int getDislikes()
-    {
-        return dislikes;
-    }
-
-    public void setDislikes(int dislikes)
-    {
-        this.dislikes = dislikes;
-    }
-
-
-    public int getShares()
-    {
-        return shares;
-    }
-
-    public void setShares(int shares)
-    {
-        this.shares = shares;
-    }
-
-
-    public Date getPostedOn()
-    {
+    public Date getPostedOn() {
         return postedOn;
     }
 
-    public void setPostedOn(Date postedOn)
-    {
+    public void setPostedOn(Date postedOn) {
         this.postedOn = postedOn;
     }
 
-
-    public User getPoster()
-    {
+    public User getPoster() {
         return poster;
     }
 
-    public void setPoster(User poster)
-    {
+    public void setPoster(User poster) {
         this.poster = poster;
     }
 
-
-    public Category getCategory()
-    {
-        return category;
-    }
-
-    public void setCategory(Category category)
-    {
-        this.category = category;
-    }
-
-
-    public List<Comment> getComments()
-    {
+    public List<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(List<Comment> comments)
-    {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
 }

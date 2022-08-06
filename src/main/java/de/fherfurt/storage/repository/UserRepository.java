@@ -11,5 +11,5 @@ public interface UserRepository {
     User getUser(long userId);
     boolean createUser(User user);
     boolean updateUser(User user);
-    boolean deleteUser(Long userId);
+    boolean deleteUser(long userId);
 }

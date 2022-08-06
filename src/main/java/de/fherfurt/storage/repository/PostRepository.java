@@ -10,8 +10,8 @@ public interface PostRepository {
     List<Post> getAllPosts();
 
     Post getPost(long postId);
-    boolean createPost(User user);
-    boolean updatePost(long postId);
+    boolean createPost(Post post);
+    boolean updatePost(Post post);
     boolean deletePost(long postId);
 
 }
