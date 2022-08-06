@@ -6,6 +6,7 @@ import de.fherfurt.core.entity.AbstractDatabaseEntity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class Post extends AbstractDatabaseEntity
 {
@@ -72,4 +73,5 @@ public class Post extends AbstractDatabaseEntity
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
 }

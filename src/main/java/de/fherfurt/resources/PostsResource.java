@@ -3,7 +3,6 @@ package de.fherfurt.resources;
 import de.fherfurt.storage.repository.RepositoryFactory;
 import de.fherfurt.storage.repository.PostRepository;
 import de.fherfurt.model.Post;
-import de.fherfurt.model.User;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -24,7 +23,7 @@ public class PostsResource {
     }
 
     @Path("{postId:\\d+}/comment")
-    public CommentsResource getCommentResource()
+    public CommentsResource getCommentsResource()
     {
         return new CommentsResource();
     }

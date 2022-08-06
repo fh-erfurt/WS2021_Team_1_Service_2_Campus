@@ -13,8 +13,8 @@ import java.util.logging.Logger;
 public class RepositoryFactory {
     private static final Logger LOGGER = Logger.getLogger( RepositoryFactory.class.getSimpleName());
 
-    private static final String PRODUCTION_PERSISTENCE_UNIT_NAME = "production_socialmedia-unit";
-    private static final String DEV_PERSISTENCE_UNIT_NAME = "dev_socialmedia-unit";
+    private static final String PRODUCTION_PERSISTENCE_UNIT_NAME = "production_socialMedia-unit";
+    private static final String DEV_PERSISTENCE_UNIT_NAME = "dev_socialMedia-unit";
 
     private final EntityManagerFactory entityManagerFactory;
     private final RepositoryImpl repository;
@@ -49,7 +49,7 @@ public class RepositoryFactory {
         String runMode = System.getenv("RUN_MODE");
         LOGGER.info( "RUN_MODE: " +  runMode );
 
-        if( runMode.equalsIgnoreCase( "production" ) )
+        if(runMode != null && runMode.equalsIgnoreCase( "production" ) )
             return Persistence.createEntityManagerFactory( PRODUCTION_PERSISTENCE_UNIT_NAME );
         else
             return Persistence.createEntityManagerFactory( DEV_PERSISTENCE_UNIT_NAME );

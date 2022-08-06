@@ -16,7 +16,7 @@ public class BaseResource
     }
 
     @Path("/users")
-    public UsersResource getUserResource()
+    public UsersResource getUsersResource()
     {
         return new UsersResource();
     }

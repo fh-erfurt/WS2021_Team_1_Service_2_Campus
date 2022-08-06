@@ -1,7 +1,6 @@
 package de.fherfurt.storage.repository;
 
 import de.fherfurt.model.Post;
-import de.fherfurt.model.User;
 
 import java.util.List;
 

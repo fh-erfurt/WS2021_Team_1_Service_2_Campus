@@ -14,6 +14,7 @@ public class WebApplication {
 
     public static Server startServer()
     {
+
         final ResourceConfig config = new ResourceConfig(BaseResource.class);
         final Server server = JettyHttpContainerFactory.createServer(URI.create(BASE_URI), config);
 

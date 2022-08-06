@@ -63,4 +63,14 @@ public class User extends AbstractDatabaseEntity
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
+    @Override
+    public int hashCode()
+    {
+        int result = userName.hashCode();
+        result = 31 * result + fullName.hashCode();
+        result = 31 * result + joined.hashCode();
+        return result;
+    }
+
 }
