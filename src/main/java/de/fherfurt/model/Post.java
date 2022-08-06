@@ -1,5 +1,7 @@
-package de.fherfurt.dataStorage;
+package de.fherfurt.model;
 
+
+import de.fherfurt.dataStorage.BaseStorage;
 
 import java.util.ArrayList;
 import java.util.Date;

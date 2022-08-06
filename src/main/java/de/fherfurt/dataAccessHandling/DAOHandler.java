@@ -7,6 +7,7 @@ import java.util.Map;
 import de.fherfurt.dataStorage.*;
 import de.fherfurt.enums.Action;
 import de.fherfurt.enums.DataType;
+import de.fherfurt.model.Post;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

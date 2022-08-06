@@ -6,20 +6,24 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/api")
-public class BaseResource{
+public class BaseResource
+{
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String info(){
+    public String info()
+    {
         return "Info";
     }
 
     @Path("/users")
-    public UserResource getUserResource(){
-        return new UserResource();
+    public UsersResource getUserResource()
+    {
+        return new UsersResource();
     }
 
     @Path("/posts")
-    public PostsResource getPostsResource(){
+    public PostsResource getPostsResource()
+    {
         return new PostsResource();
     }
 }

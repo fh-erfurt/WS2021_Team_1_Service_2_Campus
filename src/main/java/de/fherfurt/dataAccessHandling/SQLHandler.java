@@ -12,6 +12,10 @@ import java.util.Map;
 import de.fherfurt.dataStorage.*;
 import de.fherfurt.enums.Action;
 import de.fherfurt.enums.DataType;
+import de.fherfurt.model.Category;
+import de.fherfurt.model.Comment;
+import de.fherfurt.model.Post;
+import de.fherfurt.model.User;
 
 public class SQLHandler
 {
@@ -237,8 +241,8 @@ public class SQLHandler
                         Comment c = new Comment();
                         c.setUID(res.getString("comID"));
                         c.setBody(res.getString("body"));
-                        c.setCommentedOn(res.getString("postID"));
-                        c.setCreator(res.getString("userID"));
+                        c.setCommentedOn(res.getString("postID"));  //Funktioniert das noch?
+                        c.setCreator(res.getString("userID"));      //Funktioniert das noch?
                         c.setCreationDate(res.getDate("creationDate"));
 
                         comments.add(c);

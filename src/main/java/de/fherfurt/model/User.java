@@ -1,5 +1,7 @@
-package de.fherfurt.dataStorage;
+package de.fherfurt.model;
 
+
+import de.fherfurt.dataStorage.BaseStorage;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,6 +9,7 @@ import java.util.List;
 
 public class User extends BaseStorage
 {
+    public int userID;
     public String fullName;
     public String userName;
     public String passwordHash;

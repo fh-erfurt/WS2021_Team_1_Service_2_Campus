@@ -1,9 +1,9 @@
 package de.fherfurt.util;
 
-import de.fherfurt.dataStorage.Category;
-import de.fherfurt.dataStorage.Comment;
-import de.fherfurt.dataStorage.User;
-import de.fherfurt.dataStorage.Post;
+import de.fherfurt.model.Category;
+import de.fherfurt.model.Comment;
+import de.fherfurt.model.User;
+import de.fherfurt.model.Post;
 
 import java.util.ArrayList;
 import java.util.List;

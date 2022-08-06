@@ -1,14 +1,14 @@
 package de.fherfurt.storage.repository;
 
-import de.fherfurt.dataStorage.User;
+import de.fherfurt.model.User;
 
 import java.util.List;
 
-public interface UsersRepository {
+public interface UserRepository {
 
     List<User> getAllUsers();
 
-    User getUser(Long userId);
+    User getUser(long userId);
     boolean createUser(User user);
     boolean updateUser(User user);
     boolean deleteUser(Long userId);

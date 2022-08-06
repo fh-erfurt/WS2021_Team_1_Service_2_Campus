@@ -1,4 +1,6 @@
-package de.fherfurt.dataStorage;
+package de.fherfurt.model;
+
+import de.fherfurt.dataStorage.BaseStorage;
 
 import java.util.Date;
 
@@ -8,15 +10,15 @@ public class Comment extends BaseStorage
     int likes;
     int dislikes;
     Date creationDate;
-    User creator;
-    Post commentedOn;
+    String creator;
+    String commentedOn;
 
     public Comment(String body, int likes, int dislikes, User creator, Post commentedOn){
         this.body = body;
         this.likes = likes;
         this.dislikes = dislikes;
-        this.creator = creator;
-        this.commentedOn = commentedOn;
+        this.creator = String.valueOf(creator);
+        this.commentedOn = String.valueOf(commentedOn);
     }
 
     public Comment(){};
@@ -65,23 +67,23 @@ public class Comment extends BaseStorage
     }
 
 
-    public User getCreator()
+    public String getCreator()
     {
         return creator;
     }
 
-    public void setCreator(User creator)
+    public void setCreator(String creator)
     {
         this.creator = creator;
     }
 
 
-    public Post getCommentedOn()
+    public String getCommentedOn()
     {
         return commentedOn;
     }
 
-    public void setCommentedOn(Post commentedOn)
+    public void setCommentedOn(String commentedOn)
     {
         this.commentedOn = commentedOn;
     }
