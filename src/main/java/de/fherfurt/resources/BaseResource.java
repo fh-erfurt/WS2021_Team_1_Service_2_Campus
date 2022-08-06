@@ -15,10 +15,10 @@ public class BaseResource
         return "Hello from Base Resource";
     }
 
-    @Path("/users")
-    public UsersResource getUsersResource()
+    @Path("/oosers")
+    public OosersResource getOsersResource()
     {
-        return new UsersResource();
+        return new OosersResource();
     }
 
     @Path("/posts")

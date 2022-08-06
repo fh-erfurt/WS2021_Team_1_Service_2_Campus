@@ -2,18 +2,16 @@ package de.fherfurt.resources;
 
 import de.fherfurt.storage.repository.RepositoryFactory;
 import de.fherfurt.storage.repository.CommentRepository;
-import de.fherfurt.model.Post;
 import de.fherfurt.model.Comment;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.glassfish.jersey.internal.util.PropertiesClass;
 
 import java.util.List;
 import java.util.logging.Logger;
 
 public class CommentsResource {
-    private static final Logger LOGGER = Logger.getLogger( UsersResource.class.getSimpleName());
+    private static final Logger LOGGER = Logger.getLogger( OosersResource.class.getSimpleName());
 
     private final CommentRepository commentsRepository;
 

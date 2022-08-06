@@ -4,13 +4,8 @@ package de.fherfurt.model;
 import de.fherfurt.core.entity.AbstractDatabaseEntity;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
 public class Post extends AbstractDatabaseEntity
@@ -20,11 +15,11 @@ public class Post extends AbstractDatabaseEntity
     public int likes;
     public Date postedOn;
     @ManyToOne
-    public User poster;
+    public Ooser poster;
     /*@ManyToMany
     public List<Comment> comments = new ArrayList<Comment>();*/
 
-    public Post(String title, String text, int likes, User poster){
+    public Post(String title, String text, int likes, Ooser poster){
         this.title = title;
         this.text = text;
         this.likes = likes;
@@ -65,11 +60,11 @@ public class Post extends AbstractDatabaseEntity
         this.postedOn = postedOn;
     }
 
-    public User getPoster() {
+    public Ooser getPoster() {
         return poster;
     }
 
-    public void setPoster(User poster) {
+    public void setPoster(Ooser poster) {
         this.poster = poster;
     }
 

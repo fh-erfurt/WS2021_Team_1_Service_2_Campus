@@ -44,6 +44,6 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "user": "Hans Peter",
+  "ooser": "Hans Peter",
   "text": "Hyper Hyper"
 }

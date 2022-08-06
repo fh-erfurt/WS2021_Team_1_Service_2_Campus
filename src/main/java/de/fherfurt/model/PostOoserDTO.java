@@ -1,7 +1,7 @@
 package de.fherfurt.model;
 
 
-public class PostUserDTO {
-    public long userId;
+public class PostOoserDTO {
+    public long ooserId;
     public Post post;
 }

@@ -1,13 +1,11 @@
 package de.fherfurt.storage.repository;
 
 import de.fherfurt.model.Comment;
-import de.fherfurt.model.User;
 import de.fherfurt.util.DataProvide;
 
 import java.util.logging.Logger;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.logging.Logger;
 
 
 public class RepositoryFactory {
@@ -35,10 +33,11 @@ public class RepositoryFactory {
         this.entityManagerFactory = prepareEntityManagerFactory();
 
         LOGGER.info("Create RepositoryImpl");
-        this.repository = new RepositoryImpl(this.getUserDao(), this.getPostDao(), this.getCommentDao());
+        this.repository = new RepositoryImpl(this.getOoserDao(), this.getPostDao(), this.getCommentDao());
 
         LOGGER.info("Create Test Data");
-        DataProvide.createTestData().forEach(this.repository::createUser);
+        DataProvide.createTestData().forEach(this.repository::createOoser);
+
 
     }
 
@@ -55,7 +54,7 @@ public class RepositoryFactory {
             return Persistence.createEntityManagerFactory( DEV_PERSISTENCE_UNIT_NAME );
     }
 
-    public UserRepository getUserRepository()
+    public OoserRepository getOoserRepository()
     {
         return this.repository;
     }
@@ -70,9 +69,9 @@ public class RepositoryFactory {
         return this.repository;
     }
 
-    private UserDao getUserDao()
+    private OoserDao getOoserDao()
     {
-        return new JpaUserDao(this.entityManagerFactory.createEntityManager());
+        return new JpaOoserDao(this.entityManagerFactory.createEntityManager());
     }
     private PostDao getPostDao()
     {

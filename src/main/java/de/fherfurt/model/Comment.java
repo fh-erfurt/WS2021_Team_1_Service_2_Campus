@@ -15,14 +15,14 @@ public class Comment extends AbstractDatabaseEntity
     int likes;
     Date creationDate;
     @ManyToOne
-    User user;
+    Ooser ooser;
     @ManyToOne
     Post post;
 
-    public Comment(String text, int likes, User creator, Post post){
+    public Comment(String text, int likes, Ooser creator, Post post){
         this.text = text;
         this.likes = likes;
-        this.user = creator;
+        this.ooser = creator;
         this.post = post;
     }
 
@@ -61,14 +61,14 @@ public class Comment extends AbstractDatabaseEntity
     }
 
 
-    public User getUser()
+    public Ooser getOoser()
     {
-        return user;
+        return ooser;
     }
 
-    public void setUser(User user)
+    public void setOoser(Ooser ooser)
     {
-        this.user = user;
+        this.ooser = ooser;
     }
 
 

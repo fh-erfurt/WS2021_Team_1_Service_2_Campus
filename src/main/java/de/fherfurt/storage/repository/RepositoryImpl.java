@@ -1,97 +1,97 @@
 package de.fherfurt.storage.repository;
 
 import de.fherfurt.model.Comment;
-import  de.fherfurt.model.User;
+import de.fherfurt.model.Ooser;
 import de.fherfurt.model.Post;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-class RepositoryImpl implements UserRepository,PostRepository,CommentRepository {
+class RepositoryImpl implements OoserRepository,PostRepository,CommentRepository {
 
-    private final UserDao userDao;
+    private final OoserDao ooserDao;
     private final PostDao postDao;
     private final GenericDao<Comment> commentDao;
 
-    RepositoryImpl(UserDao userDao, PostDao postDao, GenericDao<Comment> commentDao){
-        this.userDao = userDao;
+    RepositoryImpl(OoserDao ooserDao, PostDao postDao, GenericDao<Comment> commentDao){
+        this.ooserDao = ooserDao;
         this.postDao = postDao;
         this.commentDao = commentDao;
     }
 
     @Override
-    public List<User> getAllUsers(){
-        return new ArrayList<>(this.userDao.findAll());
+    public List<Ooser> getAllOosers(){
+        return new ArrayList<>(this.ooserDao.findAll());
     }
 
     @Override
-    public User getUser(long userId) {
-        return null;
+    public Ooser getOoser(long ooserId) {
+        return this.ooserDao.findById(ooserId);
     }
 
     @Override
-    public boolean createUser(User user) {
-        return false;
+    public boolean createOoser(Ooser ooser) {
+        return this.ooserDao.create(ooser);
     }
 
     @Override
-    public boolean updateUser(User user) {
-        return false;
+    public boolean updateOoser(Ooser ooser) {
+        return this.ooserDao.update(ooser) == ooser;
     }
 
     @Override
-    public boolean deleteUser(long userId) {
-        return false;
+    public boolean deleteOoser(long ooserId) {
+        return this.ooserDao.delete(ooserId);
     }
 
     @Override
     public List<Post> getAllPosts() {
-        return null;
+        return new ArrayList<>(this.postDao.findAll());
     }
 
     @Override
     public Post getPost(long postId) {
-        return null;
+        return this.postDao.findById(postId);
     }
 
     @Override
     public boolean createPost(Post post) {
-        return false;
+        return this.postDao.create(post);
     }
 
     @Override
     public boolean updatePost(Post post) {
-        return false;
+        return this.postDao.update(post) == post;
     }
 
     @Override
     public boolean deletePost(long postId) {
-        return false;
+        return this.postDao.delete(postId);
     }
 
     @Override
     public List<Comment> getAllComments() {
-        return null;
+        return new ArrayList<>(this.commentDao.findAll());
     }
 
     @Override
     public Comment getComment(long commentId) {
-        return null;
+        return this.commentDao.findById(commentId);
     }
 
     @Override
     public boolean createComment(Comment comment) {
-        return false;
+        return this.commentDao.create(comment);
     }
 
     @Override
     public boolean updateComment(Comment comment) {
-        return false;
+        return this.commentDao.update(comment) == comment;
     }
 
     @Override
     public boolean deleteComment(long commentId) {
-        return false;
+        return this.commentDao.delete(commentId);
     }
 }

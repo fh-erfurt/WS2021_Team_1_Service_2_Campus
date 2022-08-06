@@ -15,7 +15,7 @@
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect" />
             <property name="hibernate.connection.url" value="jdbc:postgresql://app_db:5432/socialMedia_db" />
-            <property name="hibernate.connection.user" value="postgres" />
+            <property name="hibernate.connection.ooser" value="postgres" />
             <property name="hibernate.connection.password" value="password" />
             <property name="hibernate.flushMode" value="FLUSH_AUTO" />
             <property name="hibernate.hbm2ddl.auto" value="create-drop" />
@@ -40,7 +40,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
             <property name="hibernate.connection.driver_class" value="org.h2.Driver" />
             <property name="hibernate.connection.url" value="jdbc:h2:mem:socialMedia_db;DB_CLOSE_DELAY=-1" />
-            <property name="hibernate.connection.user" value="sa" />
+            <property name="hibernate.connection.ooser" value="sa" />
             <property name="hibernate.flushMode" value="FLUSH_AUTO" />
             <property name="hibernate.hbm2ddl.auto" value="create-drop" />
 
