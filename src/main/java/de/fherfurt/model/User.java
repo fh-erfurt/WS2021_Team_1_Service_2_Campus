@@ -3,17 +3,20 @@ package de.fherfurt.model;
 
 import de.fherfurt.core.entity.AbstractDatabaseEntity;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
+@Entity
 public class User extends AbstractDatabaseEntity
 {
     public String fullName;
     public String userName;
     public Date joined = new Date(Long.MIN_VALUE);
-    public List<Post> posts = new ArrayList<Post>();
-    public List<Comment> comments = new ArrayList<Comment>();
+
 
     public User(String fullName, String userName){
         this.fullName = fullName;
@@ -46,22 +49,6 @@ public class User extends AbstractDatabaseEntity
 
     public void setJoined(Date joined) {
         this.joined = joined;
-    }
-
-    public List<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
     }
 
     @Override

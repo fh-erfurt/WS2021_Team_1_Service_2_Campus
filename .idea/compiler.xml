@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="socialMedia" />
         <module name="campus" />
         <module name="WS2021_Team_1_Service_2_Campus" />
-        <module name="social-media" />
       </profile>
     </annotationProcessing>
   </component>

@@ -3,14 +3,20 @@ package de.fherfurt.model;
 import de.fherfurt.core.entity.AbstractDatabaseEntity;
 
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
+
+@Entity
 public class Comment extends AbstractDatabaseEntity
 {
     String text;
     int likes;
     Date creationDate;
+    @ManyToOne
     User user;
+    @ManyToOne
     Post post;
 
     public Comment(String text, int likes, User creator, Post post){
