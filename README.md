@@ -1,4 +1,4 @@
-# WS2021_Team_1_Service_2_Campus
+# Team Social Media
 ## Teilnehmer:
 - Andreas Lemke
 - Jonas Kruse
@@ -8,11 +8,6 @@
 
 
 ## Zu beachten
-- Packages nutzen
-- Doku anlegen
-- Reports hinzufügen
-- Code kommentieren/Credit zu der jeweiligen Person
-
-
-Code Dokumentation
-https://docs.google.com/document/d/1ALZKoAgOdqV02LrDwhPPHTKzHeO8hQZtziR7c4y9zDc/edit?usp=sharing
+- Dokumentation /doc/documentation.md
+- API-Test-Tool unter https://www.postman.com/
+- Postman .json unter /doc/Java.postman_collection.json
