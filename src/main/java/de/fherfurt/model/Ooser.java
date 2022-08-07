@@ -12,16 +12,20 @@ public class Ooser extends AbstractDatabaseEntity
 {
     private String fullName;
     private String ooserName;
+    private boolean active;
 
 
     public Ooser(String fullName, String ooserName){
         this.fullName = fullName;
         this.ooserName = ooserName;
+        active = true;
         //this.posts = posts;
         //this.comments = comments;
     };
 
-    public Ooser(){};
+    public Ooser(){
+        active = true;
+    };
 
     public String getFullName() {
         return fullName;
@@ -37,6 +41,14 @@ public class Ooser extends AbstractDatabaseEntity
 
     public void setOoserName(String ooserName) {
         this.ooserName = ooserName;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     @Override

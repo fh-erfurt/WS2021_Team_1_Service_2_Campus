@@ -79,7 +79,7 @@ public class OosersResource {
         }
 
         if(u != null){
-            this.ooserRepository.deleteOoser(ooserId);
+            u.setActive(false);
             return Response.ok().build();
         }
         else {
@@ -174,6 +174,7 @@ public class OosersResource {
 
         Ooser o = this.ooserRepository.getOoser(ooserId);
         if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
+        if(!o.isActive()) return Response.status(Response.Status.NOT_FOUND).build();
 
         postToCreate.setPoster(o);
 
@@ -199,6 +200,7 @@ public class OosersResource {
         if(p.getPoster() != this.ooserRepository.getOoser(Long.valueOf(oid))){
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
+
 
         this.postsRepository.deletePost(p.getId());
         return Response.ok().build();
@@ -263,6 +265,7 @@ public class OosersResource {
 
         Ooser o = this.ooserRepository.getOoser(ooserId);
         if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
+        if(!o.isActive()) return Response.status(Response.Status.NOT_FOUND).build();
         Post p = this.postsRepository.getPost(postId);
         if(p == null) return Response.status(Response.Status.NOT_FOUND).build();
 
