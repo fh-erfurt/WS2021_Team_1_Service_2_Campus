@@ -10,12 +10,11 @@ import java.util.Date;
 @Entity
 public class Post extends AbstractDatabaseEntity
 {
-    public String title;
-    public String text;
-    public int likes;
-    public Date postedOn;
+    private String title;
+    private String text;
+    private int likes;
     @ManyToOne
-    public Ooser poster;
+    private Ooser poster;
     /*@ManyToMany
     public List<Comment> comments = new ArrayList<Comment>();*/
 
@@ -52,20 +51,20 @@ public class Post extends AbstractDatabaseEntity
         this.likes = likes;
     }
 
-    public Date getPostedOn() {
-        return postedOn;
-    }
-
-    public void setPostedOn(Date postedOn) {
-        this.postedOn = postedOn;
-    }
-
     public Ooser getPoster() {
         return poster;
     }
 
     public void setPoster(Ooser poster) {
         this.poster = poster;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int result = title.hashCode();
+        result = 31 * result + poster.hashCode();
+        return result;
     }
 
    /* public List<Comment> getComments() {

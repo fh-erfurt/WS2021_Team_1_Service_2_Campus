@@ -12,7 +12,6 @@ public class Ooser extends AbstractDatabaseEntity
 {
     private String fullName;
     private String ooserName;
-    private Date joined = new Date(Long.MIN_VALUE);
 
 
     public Ooser(String fullName, String ooserName){
@@ -40,20 +39,11 @@ public class Ooser extends AbstractDatabaseEntity
         this.ooserName = ooserName;
     }
 
-    public Date getJoined() {
-        return joined;
-    }
-
-    public void setJoined(Date joined) {
-        this.joined = joined;
-    }
-
     @Override
     public int hashCode()
     {
         int result = ooserName.hashCode();
         result = 31 * result + fullName.hashCode();
-        result = 31 * result + joined.hashCode();
         return result;
     }
 

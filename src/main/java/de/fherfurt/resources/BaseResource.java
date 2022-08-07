@@ -27,4 +27,10 @@ public class BaseResource
         return new PostsResource();
     }
 
+    @Path("/comments")
+    public CommentsResource getCommentsResource()
+    {
+        return new CommentsResource();
+    }
+
 }

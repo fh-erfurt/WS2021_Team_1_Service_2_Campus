@@ -38,7 +38,6 @@ public class RepositoryFactory {
         LOGGER.info("Create Test Data");
         DataProvide.createTestData().forEach(this.repository::createOoser);
 
-
     }
 
     private EntityManagerFactory prepareEntityManagerFactory()

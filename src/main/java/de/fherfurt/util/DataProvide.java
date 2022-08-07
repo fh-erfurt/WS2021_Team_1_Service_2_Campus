@@ -22,13 +22,6 @@ public class DataProvide {
         ooserList.add(  new Ooser("karsten Müller", "Kart"));
         ooserList.add(  new Ooser("Test Dummy", "Dummy"));
 
-
-        comments1.add(new Comment("Cooler Post", 34, karsten,pfosten ));
-
-        posts1.add(new Post("Test", "Test Body", 23,karsten));
-        posts1.add(new Post("Test2", "Test2 Body", 244, karsten));
-
-
         return ooserList;
     }
 }
