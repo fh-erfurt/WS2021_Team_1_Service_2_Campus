@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "1ffafe66-fc5a-415c-a74b-0ffc38058626",
+		"name": "Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22668297"
+	},
+	"item": [
+		{
+			"name": "Oosers",
+			"item": [
+				{
+					"name": "Posts",
+					"item": [
+						{
+							"name": "Get All Posts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Ooser Posts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/1/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"1",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Post",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/2/posts/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"2",
+										"posts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"TestPost2\",\r\n    \"text\":\"Dies ist ein Testpost per REST\",\r\n    \"likes\":666\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/2/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"2",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Post",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "oid",
+										"value": "2",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"TestPost\",\r\n    \"text\":\"Dies ist ein bearbeiteter Testpost per REST\",\r\n    \"likes\":369\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/2/posts/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"2",
+										"posts",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Post",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/2/posts/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"2",
+										"posts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Get All Comments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Ooser Comments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/2/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"2",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comments From Post",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/2/posts/1/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"2",
+										"posts",
+										"1",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comment From Post",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/2/posts/1/comments/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"2",
+										"posts",
+										"1",
+										"comments",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Comment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\":\"Ein wirklich sehr schöner Beitrag.\",\r\n    \"likes\":12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/1/posts/3/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"1",
+										"posts",
+										"3",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Comments",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\":\"Ein wirklich sehr schöner Beitrag, davon werde ich noch meinen Enkeln erzählen!\",\r\n    \"likes\":120\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/1/posts/3/comments/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"1",
+										"posts",
+										"3",
+										"comments",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Comment",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "oid",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/oosers/1/posts/3/comments/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"oosers",
+										"1",
+										"posts",
+										"3",
+										"comments",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Oosers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/oosers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oosers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ooser",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Ooser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Guenther Tester\",\r\n    \"ooserName\": \"Test01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/oosers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oosers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Ooser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Guenther Tester\",\r\n    \"ooserName\": \"Test02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/oosers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oosers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ooser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "oid",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/oosers/:oid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"oosers",
+								":oid"
+							],
+							"variable": [
+								{
+									"key": "oid",
+									"value": "{{oid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InfoTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "oid",
+			"value": "2",
+			"type": "string"
+		}
+	]
+}
