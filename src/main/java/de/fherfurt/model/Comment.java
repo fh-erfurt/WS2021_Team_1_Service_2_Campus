@@ -13,7 +13,6 @@ public class Comment extends AbstractDatabaseEntity
 {
     String text;
     int likes;
-    Date creationDate;
     @ManyToOne
     Ooser ooser;
     @ManyToOne
@@ -50,17 +49,6 @@ public class Comment extends AbstractDatabaseEntity
     }
 
 
-    public Date getCreationDate()
-    {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate)
-    {
-        this.creationDate = creationDate;
-    }
-
-
     public Ooser getOoser()
     {
         return ooser;
@@ -80,6 +68,14 @@ public class Comment extends AbstractDatabaseEntity
     public void setPost(Post post)
     {
         this.post = post;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int result = text.hashCode();
+        result = 31 * result + ooser.hashCode();
+        return result;
     }
 
 }

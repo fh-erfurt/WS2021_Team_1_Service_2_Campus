@@ -29,15 +29,4 @@ public class CommentsResource {
         return this.commentsRepository.getAllComments();
     }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response createComment(Comment commentToCreate){
-        boolean success = this.commentsRepository.createComment(commentToCreate);
-
-        if(success)
-            return Response.ok(commentToCreate).build();
-        else
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
-    }
 }

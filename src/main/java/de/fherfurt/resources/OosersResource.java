@@ -14,6 +14,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -121,6 +122,24 @@ public class OosersResource {
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+    @GET
+    @Path("{ooserId:\\d+}/posts")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Post> getAllOoserPosts(@PathParam("ooserId") long ooserId)
+    {
+        List<Post> ooserPosts = new ArrayList<>();
+
+        Ooser o = this.ooserRepository.getOoser(ooserId);
+        if(o == null) return ooserPosts;
+
+
+
+        for(Post p:this.postsRepository.getAllPosts()){
+            if(p.getPoster() == o) ooserPosts.add(p);
+        }
+        return ooserPosts;
+    }
+
 
     @GET
     @Path("{ooserId:\\d+}/posts/{postId:\\d+}")
@@ -157,10 +176,26 @@ public class OosersResource {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
     }
 
+    @DELETE
+    @Path("{ooserId:\\d+}/posts/{postId:\\d+}")
+    public Response deletePost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId)
+    {
+
+        Ooser o = this.ooserRepository.getOoser(ooserId);
+        if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        Post p = this.postsRepository.getPost(postId);
+        if(p == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        this.postsRepository.deletePost(p.getId());
+        return Response.ok().build();
+
+    }
+
     @PUT
-    @Path("{ooserId:\\d+}/posts/{PostId:\\d+}")
+    @Path("{ooserId:\\d+}/posts/{postId:\\d+}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updatePost(@PathParam("ooserId") long ooserId, @PathParam("PostId") long postId, Post postToUpdate)
+    public Response updatePost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, Post postToUpdate)
     {
         Ooser o = this.ooserRepository.getOoser(ooserId);
         if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
@@ -224,4 +259,110 @@ public class OosersResource {
         else
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
     }
+
+    @GET
+    @Path("{ooserId:\\d+}/posts/{postId:\\d+}/comments")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Comment> getAllCommentsFromPost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId)
+    {
+        List<Comment> postComments = new ArrayList<>();
+
+        Ooser o = this.ooserRepository.getOoser(ooserId);
+        if(o == null) return postComments;
+        Post p = this.postsRepository.getPost(postId);
+        if(p == null) return postComments;
+
+        for(Comment c:this.commentsRepository.getAllComments()){
+            if(c.getPost() == p) postComments.add(c);
+        }
+        return postComments;
+    }
+
+    @GET
+    @Path("{ooserId:\\d+}/posts/{postId:\\d+}/comments/{commentId:\\d+}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCommentFromPost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @PathParam("commentId") long commentId)
+    {
+
+
+        Ooser o = this.ooserRepository.getOoser(ooserId);
+        if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
+        Post p = this.postsRepository.getPost(postId);
+        if(p == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        if(this.commentsRepository.getComment(commentId) != null)
+            return Response.ok(this.commentsRepository.getComment(commentId)).build();
+        else
+            return Response.status(Response.Status.NOT_FOUND).build();
+    }
+
+    @GET
+    @Path("{ooserId:\\d+}/comments")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Comment> getCommentsFromOoser(@PathParam("ooserId") long ooserId)
+    {
+        List<Comment> ooserComments = new ArrayList<>();
+
+        Ooser o = this.ooserRepository.getOoser(ooserId);
+        if(o == null) return ooserComments;
+
+        for(Comment c:this.commentsRepository.getAllComments()){
+            if(c.getOoser() == o) ooserComments.add(c);
+        }
+        return ooserComments;
+    }
+
+    @DELETE
+    @Path("{ooserId:\\d+}/posts/{postId:\\d+}/comments/{commentId:\\d+}")
+    public Response deleteComment(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @PathParam("commentId") long commentId)
+    {
+        Ooser o = this.ooserRepository.getOoser(ooserId);
+        if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        Post p = this.postsRepository.getPost(postId);
+        if(p == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        Comment c = this.commentsRepository.getComment(commentId);
+        if(c == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        this.commentsRepository.deleteComment(c.getId());
+        return Response.ok().build();
+    }
+
+    @PUT
+    @Path("{ooserId:\\d+}/posts/{postId:\\d+}/comments/{commentId:\\d+}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response deleteComment(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @PathParam("commentId") long commentId, Comment commentToUpdate,
+                                  @HeaderParam("oid") @DefaultValue("-1") String oid)
+    {
+        Ooser o = this.ooserRepository.getOoser(ooserId);
+        if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        Post p = this.postsRepository.getPost(postId);
+        if(p == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        Comment c = this.commentsRepository.getComment(commentId);
+        if(c == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        if(c.getOoser() != this.ooserRepository.getOoser(Long.valueOf(oid))){
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
+
+        commentToUpdate = updateComment(c, commentToUpdate);
+
+        return Response.ok().build();
+    }
+
+    private Comment updateComment(Comment old, Comment update){
+        if(update.getText() != null)
+        {
+            old.setText(update.getText());
+        }
+        if(update.getLikes() > 0)
+        {
+            old.setLikes(update.getLikes());
+        }
+        return old;
+    }
+
 }

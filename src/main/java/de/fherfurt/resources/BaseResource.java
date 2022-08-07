@@ -1,8 +1,6 @@
 package de.fherfurt.resources;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/api")
@@ -10,9 +8,9 @@ public class BaseResource
 {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String info()
+    public String info(@HeaderParam("oid") @DefaultValue("-1") String token)
     {
-        return "Hello from Base Resource";
+        return "Hello from Base Resource " + token;
     }
 
     @Path("/oosers")
