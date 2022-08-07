@@ -70,8 +70,13 @@ public class OosersResource {
 
     @DELETE
     @Path("{ooserId:\\d+}")
-    public Response deleteOoser(@PathParam("ooserId") long ooserId){
+    public Response deleteOoser(@PathParam("ooserId") long ooserId, @HeaderParam("oid") @DefaultValue("-1") String oid){
+
         Ooser u = this.ooserRepository.getOoser( ooserId);
+
+        if(u != this.ooserRepository.getOoser(Long.valueOf(oid))){
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
 
         if(u != null){
             this.ooserRepository.deleteOoser(ooserId);
@@ -85,9 +90,13 @@ public class OosersResource {
     @PUT
     @Path("{ooserId:\\d+}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateOoser(@PathParam("ooserId") long ooserId, Ooser ooserToUpdate){
+    public Response updateOoser(@PathParam("ooserId") long ooserId, Ooser ooserToUpdate, @HeaderParam("oid") @DefaultValue("-1") String oid){
 
         Ooser oldO = this.ooserRepository.getOoser(ooserId);
+
+        if(oldO != this.ooserRepository.getOoser(Long.valueOf(oid))){
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
 
         boolean oExists = (oldO != null);
         if(!oExists) return Response.status(Response.Status.NOT_FOUND).build();
@@ -178,7 +187,7 @@ public class OosersResource {
 
     @DELETE
     @Path("{ooserId:\\d+}/posts/{postId:\\d+}")
-    public Response deletePost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId)
+    public Response deletePost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @HeaderParam("oid") @DefaultValue("-1") String oid)
     {
 
         Ooser o = this.ooserRepository.getOoser(ooserId);
@@ -186,6 +195,10 @@ public class OosersResource {
 
         Post p = this.postsRepository.getPost(postId);
         if(p == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        if(p.getPoster() != this.ooserRepository.getOoser(Long.valueOf(oid))){
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
 
         this.postsRepository.deletePost(p.getId());
         return Response.ok().build();
@@ -195,13 +208,17 @@ public class OosersResource {
     @PUT
     @Path("{ooserId:\\d+}/posts/{postId:\\d+}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updatePost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, Post postToUpdate)
+    public Response updatePost(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, Post postToUpdate, @HeaderParam("oid") @DefaultValue("-1") String oid)
     {
         Ooser o = this.ooserRepository.getOoser(ooserId);
         if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
 
         Post oldP = this.postsRepository.getPost(postId);
         if(oldP == null) return Response.status(Response.Status.NOT_FOUND).build();
+
+        if(oldP.getPoster() != this.ooserRepository.getOoser(Long.valueOf(oid))){
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
 
         postToUpdate = updatePost(oldP, postToUpdate);
 
@@ -314,7 +331,8 @@ public class OosersResource {
 
     @DELETE
     @Path("{ooserId:\\d+}/posts/{postId:\\d+}/comments/{commentId:\\d+}")
-    public Response deleteComment(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @PathParam("commentId") long commentId)
+    public Response deleteComment(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @PathParam("commentId") long commentId,
+                                  @HeaderParam("oid") @DefaultValue("-1") String oid)
     {
         Ooser o = this.ooserRepository.getOoser(ooserId);
         if(o == null) return Response.status(Response.Status.NOT_FOUND).build();
@@ -325,6 +343,10 @@ public class OosersResource {
         Comment c = this.commentsRepository.getComment(commentId);
         if(c == null) return Response.status(Response.Status.NOT_FOUND).build();
 
+        if(c.getOoser() != this.ooserRepository.getOoser(Long.valueOf(oid))){
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
+
         this.commentsRepository.deleteComment(c.getId());
         return Response.ok().build();
     }
@@ -332,7 +354,7 @@ public class OosersResource {
     @PUT
     @Path("{ooserId:\\d+}/posts/{postId:\\d+}/comments/{commentId:\\d+}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response deleteComment(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @PathParam("commentId") long commentId, Comment commentToUpdate,
+    public Response editComment(@PathParam("ooserId") long ooserId, @PathParam("postId") long postId, @PathParam("commentId") long commentId, Comment commentToUpdate,
                                   @HeaderParam("oid") @DefaultValue("-1") String oid)
     {
         Ooser o = this.ooserRepository.getOoser(ooserId);
